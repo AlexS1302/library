@@ -1,12 +1,10 @@
 @import url('modern-normalize.css');
 
 
-
 @font-face {
     font-family: 'Roboto', sans-serif;
     src: url('fonts/Roboto-VariableFont_wdth\,wght.ttf') format('truetype');
 }
-
 
 :root{
     --linear-blue: linear-gradient(90deg, #E6E6FA, #B0E0E6);
@@ -44,25 +42,89 @@ body {
     font-weight: 600;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .menu {
     display: flex;
     flex-direction: column;
     gap: 3em;
     background-color: var(--translucent-white);
-    padding: 2em 4em;
+    padding: 2em 2.5em;
     margin: 10px;
     border-radius: 20px;
 }
 
-ul {
-    list-style-type: none;
+.menu-item {
+    position: relative;
+    padding-left: 2.5em;
+    transition-duration: 0.4s;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: -9px;
+    width: 38px;
+    height: 38px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
 }
 
 .menu-item a {
     text-decoration: none;
     color: black;
+    font-size: 1.2em;
+    font-weight: 500;
 }
 
+/* icons */
+
+#home::before {
+    content: url('icons/home.svg');
+}
+
+#categories::before {
+    content: url('icons/categories.svg');
+}
+
+#my-library::before {
+    content: url(icons/my-library.svg);
+}
+
+#new-releases::before {
+    content: url(icons/new-releases.svg);
+}
+
+#download::before {
+    content: url(icons/download.svg);
+}
+
+#favorites::before {
+    content: url(icons/favorites.svg);
+}
+
+#settings::before {
+    content: url(icons/settings.svg);
+}
+
+#support::before {
+    content: url(icons/support.svg);
+}
+
+#logout::before {
+    content: url(icons/logout.svg);
+}
 
 /* header */
 
@@ -70,7 +132,6 @@ header {
     grid-area: header;
     background-color: aliceblue;
 }
-
 
 
 /* main */
