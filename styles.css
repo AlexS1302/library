@@ -16,7 +16,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-/* sidebar */
+/* header */
 
 .grid-container {
     display: grid;
@@ -28,12 +28,62 @@ body {
         "sidebar main";
 }
 
+header {
+    grid-area: header;
+    background-color: aliceblue;
+    box-shadow: 10px 0px 6px 0px #E6E6FA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#search {
+    height: 40px;
+    width: max(200px, 40%);
+    border-radius: 10px;
+    border: none;
+    margin-left: 2em;
+    padding: 0px 0px 0px 40px;
+    background-image: url(icons/search.svg);
+    background-position: 10px;
+    background-repeat: no-repeat;
+    box-shadow: 0px 2px 4px 0px #B0E0E6;
+}
+
+#search:focus {
+    outline: 2px solid #B0E0E6;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    padding-right: 2em;
+    gap: 10px;
+}
+
+
+#notifications {
+    height: 25px;
+    width: 25px;
+}
+
+#username {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+
+/* sidebar */
+
 .sidebar {
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: var(--linear-blue);
+    box-shadow: 0px 12px 10px 2px #B0E0E6;
+    z-index: 1;
 }
 
 #logo {
@@ -124,13 +174,6 @@ ul {
 
 #logout::before {
     content: url(icons/logout.svg);
-}
-
-/* header */
-
-header {
-    grid-area: header;
-    background-color: aliceblue;
 }
 
 
