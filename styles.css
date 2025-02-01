@@ -7,19 +7,23 @@
 }
 
 :root{
-    --linear-blue: linear-gradient(90deg, #E6E6FA, #B0E0E6);
+    --white:white;
     --translucent-white: rgba(255, 255, 255, 0.5);
+    --powder-blue: #B0E0E6;
+    --linear-blue: linear-gradient(90deg, #E6E6FA, var(--powder-blue));
     --linear-black: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0),
         rgba(0, 0, 0, 0.8)
-    )
+    );
+    --light-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 body {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
 }
+
 
 /* header */
 
@@ -53,11 +57,11 @@ header {
     background-image: url(icons/search.svg);
     background-position: 10px;
     background-repeat: no-repeat;
-    box-shadow: 0px 2px 4px 0px #B0E0E6;
+    box-shadow: 0px 2px 4px 0px var(--powder-blue);
 }
 
 #search:focus {
-    outline: 2px solid #B0E0E6;
+    outline: 2px solid var(--powder-blue);
 }
 
 .user-section {
@@ -92,7 +96,7 @@ header {
     flex-direction: column;
     align-items: center;
     background: var(--linear-blue);
-    box-shadow: 0px 12px 10px 2px #B0E0E6;
+    box-shadow: 0px 12px 10px 2px var(--powder-blue);
     z-index: 2;
 }
 
@@ -122,7 +126,7 @@ ul {
     transition-duration: 0.4s;
 }
 
-.menu-item:hover {
+.menu-item:hover, .discover-btn:hover {
     transform: scale(1.05);
 }
 
@@ -133,7 +137,7 @@ ul {
     top: -9px;
     width: 38px;
     height: 38px;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -147,6 +151,7 @@ ul {
     font-size: 1.2em;
     font-weight: 500;
 }
+
 
 /* menu icons */
 
@@ -212,48 +217,45 @@ ul {
 .discover-poetry {
     grid-column: 1 / 2;
     background-image: var(--linear-black), url(photos/the-sun-and-her-flowers.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 20px;
-    background-size: cover;
-    min-height: 404px;
-    min-width: 404px;
     margin: 30px 10px 30px 35px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    display: flex;
-}
-
-.discover-poetry::before {
-    content: url(icons/keyboard_arrow_left.svg);
-    position: absolute;
-    left: 5px;
-    bottom: 50%;
 }
 
 .discover-tragedy {
     grid-column: 2 / 3;
     background-image: var(--linear-black), url(photos/the-great-gatsby.jpg);
+    margin: 30px 35px 30px 10px;
+}
+
+.discover-poetry, .discover-tragedy {
+    display: flex;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 20px;
     background-size: cover;
+    border-radius: 20px;
     min-height: 404px;
     min-width: 404px;
-    margin: 30px 35px 30px 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    display: flex;
+    box-shadow: var(--light-box-shadow);
+}
+
+.discover-poetry::before, .discover-tragedy::after {
+    position: absolute;
+    bottom: 50%;
+    cursor: pointer;
+}
+
+.discover-poetry::before {
+    content: url(icons/keyboard_arrow_left.svg);
+    left: 5px;
 }
 
 .discover-tragedy::after {
     content: url(icons/keyboard_arrow_right.svg);
-    position: absolute;
     right: 5px;
-    bottom: 50%;
 }
 
 .discover-info {
     align-self: flex-end;
-    color: white;
+    color: var(--white);
     padding: 20px;
 }
 
@@ -276,20 +278,21 @@ ul {
     margin-bottom: 5px;
     cursor: pointer;
     background: var(--linear-blue);
+    transition-duration: 0.4s;
 }
 
 
-/* review section */
+/* review (book of the week) section */
 
 .review-section {
     grid-column: 2 / 3;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 20px;
     margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--light-box-shadow);
 }
 
 .review-section img {
@@ -313,15 +316,16 @@ ul {
     align-items: center;
 }
 
-.star {
+.star, .half-star {
     height: 25px;
     width: 25px;
+}
+
+.star {
     background-image: url(icons/star.svg);
 }
 
 .half-star {
-    height: 25px;
-    width: 25px;
     background-image: url(icons/star-half.svg);
 }
 
@@ -331,9 +335,9 @@ ul {
 .library {
     grid-row: 2 / 3;
     border-radius: 20px;
-    background-color: white;
     margin: 10px 35px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: var(--white);
+    box-shadow: var(--light-box-shadow);
 }
 
 .library h3 {
