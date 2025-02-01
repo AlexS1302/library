@@ -9,6 +9,11 @@
 :root{
     --linear-blue: linear-gradient(90deg, #E6E6FA, #B0E0E6);
     --translucent-white: rgba(255, 255, 255, 0.5);
+    --linear-black: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.8)
+    )
 }
 
 body {
@@ -31,7 +36,7 @@ body {
 header {
     grid-area: header;
     background-color: aliceblue;
-    box-shadow: 10px 0px 6px 0px #E6E6FA;
+    box-shadow: 10px 0px 6px 0px #8ad5dc;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,19 +64,23 @@ header {
     display: flex;
     align-items: center;
     padding-right: 2em;
-    gap: 10px;
 }
 
+#user-avatar {
+    padding: 10px;
+}
 
 #notifications {
     height: 25px;
     width: 25px;
+    cursor: pointer;
 }
 
 #username {
     display: flex;
     align-items: center;
     font-weight: 500;
+    cursor: pointer;
 }
 
 
@@ -182,7 +191,7 @@ ul {
 
 .main {
     grid-area: main;
-    background-color: white;
+    background-color: #f1fbfb;
     display: grid;
     grid-template-columns: 3fr 300px;
 }
@@ -197,17 +206,137 @@ ul {
     grid-row: 1 / 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    position: relative;
 }
 
-#discover-fantasy {
+.discover-poetry {
     grid-column: 1 / 2;
+    background-image: var(--linear-black), url(photos/the-sun-and-her-flowers.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;
+    background-size: cover;
+    min-height: 404px;
+    min-width: 404px;
+    margin: 30px 10px 30px 35px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
 }
 
-#discover-poetry {
+.discover-poetry::before {
+    content: url(icons/keyboard_arrow_left.svg);
+    position: absolute;
+    left: 5px;
+    bottom: 50%;
+}
+
+.discover-tragedy {
     grid-column: 2 / 3;
+    background-image: var(--linear-black), url(photos/the-great-gatsby.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;
+    background-size: cover;
+    min-height: 404px;
+    min-width: 404px;
+    margin: 30px 35px 30px 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
 }
 
+.discover-tragedy::after {
+    content: url(icons/keyboard_arrow_right.svg);
+    position: absolute;
+    right: 5px;
+    bottom: 50%;
+}
+
+.discover-info {
+    align-self: flex-end;
+    color: white;
+    padding: 20px;
+}
+
+.discover-info h4 {
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.discover-info h3 {
+    margin-top: 10px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.discover-btn {
+    border-radius: 10px;
+    border: none;
+    padding: 10px 15px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background: var(--linear-blue);
+}
+
+
+/* review section */
+
+.review-section {
+    grid-column: 2 / 3;
+    background-color: white;
+    border-radius: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.review-section img {
+    width: 250px;
+    height: 350px;
+    border-radius: 20px;
+}
+
+.review-section h4 {
+    margin-top: 0;
+}
+
+.review-section p {
+    padding: 15px 20px;
+    margin: 10px 10px;
+    font-weight: 400;
+}
+
+#stars {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    height: 25px;
+    width: 25px;
+    background-image: url(icons/star.svg);
+}
+
+.half-star {
+    height: 25px;
+    width: 25px;
+    background-image: url(icons/star-half.svg);
+}
+
+
+/* interactive library */
 
 .library {
     grid-row: 2 / 3;
+    border-radius: 20px;
+    background-color: white;
+    margin: 10px 35px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+.library h3 {
+    padding-left: 20px;
+}
+
