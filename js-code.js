@@ -62,18 +62,60 @@ function displayBooks(books) {
 
         bookImage.appendChild(bookPages);
         bookElement.appendChild(bookImage);
-        bookList.appendChild(bookElement);
 
         const bookDetails = document.createElement("div");
+        bookDetails.classList.add("book-details");
 
+        const bookTitle = document.createElement("h3");
+        bookTitle.textContent = book.title;
+        bookDetails.appendChild(bookTitle);
 
+        const bookAuthor = document.createElement("h4");
+        bookAuthor.textContent = book.author;
+        bookDetails.appendChild(bookAuthor);
 
+        const bookButtons = document.createElement("div");
+        bookButtons.classList.add("book-buttons");
+        const readButton = document.createElement("button");
+        readButton.classList.add("read-button");
 
+        if (book.read === true) {
+            readButton.innerHTML = `Done`;
+            readButton.style.backgroundColor = "#10e2c4";
+        } else {
+            readButton.textContent = "Mark as Read";
+            readButton.classList.add("read-gradient")
+        }
 
+        readButton.addEventListener("click", () => {
+            if (readButton.textContent === "Mark as Read") {
+                book.read = true;
+                readButton.innerHTML = `Done`;
+                readButton.style.backgroundColor = "#10e2c4";
+            } else {
+                book.read = false;
+                readButton.textContent = "Mark as read";
+                readButton.classList.add("read-gradient")
+            }
+        });
 
+        bookButtons.appendChild(readButton);
 
+        const deleteButton = document.createElement("img");
+        deleteButton.classList.add("delete");
+        deleteButton.src = "./icons/delete.svg";
+        deleteButton.alt = "Delete book button";
 
-    })
+        deleteButton.addEventListener("click", () => {
+            deleteButton.closest(".book").remove();
+        });
+
+        bookButtons.appendChild(deleteButton);
+        bookDetails.appendChild(bookButtons);
+        bookElement.appendChild(bookDetails);
+        bookList.appendChild(bookElement);
+
+    });
 }
 
 displayBooks(myLibrary);
