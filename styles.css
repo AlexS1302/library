@@ -126,7 +126,7 @@ ul {
     transition-duration: 0.4s;
 }
 
-.menu-item:hover, .discover-btn:hover {
+.menu-item:hover, .discover-btn:hover, #add-book-btn:hover {
     transform: scale(1.05);
 }
 
@@ -270,7 +270,7 @@ ul {
     margin-bottom: 15px;
 }
 
-.discover-btn {
+.discover-btn, #add-book-btn {
     border-radius: 10px;
     border: none;
     padding: 10px 15px;
@@ -340,7 +340,14 @@ ul {
     box-shadow: var(--light-box-shadow);
 }
 
-.library h3 {
-    padding-left: 20px;
+.library-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.library-top h3 {
+    padding-left: 10px;
 }
 
