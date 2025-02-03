@@ -62,41 +62,42 @@
                         <h3>My Books</h3>
                         <button id="add-book-btn">Add Book</button>
                     </div>
+                    
+                    <div class="books"></div>
+                    
+                    <dialog class="modal">
+                        <form class="book-form">
+                            <label for="modal-book-title">Book Title</label>
+                            <input type="text" name="modal-book-title" id="modal-book-title" placeholder="Enter Book Title" required>
+                            
+                            <label for="modal-book-author">Book Author</label>
+                            <input type="text" name="modal-book-author" id="modal-book-author" placeholder="Enter Book Author" required>
 
-                </div>
+                            <label for="modal-book-pages">Number of Pages</label>
+                            <input type="number" name="modal-book-pages" id="modal-book-pages" placeholder="Enter Number of Pages" required>
 
-                <dialog class="modal">
-                    <form class="book-form">
-                        <label for="book-title">Book Title</label>
-                        <input type="text" name="book-title" id="book-title" placeholder="Enter Book Title" required>
-                        
-                        <label for="book-author">Book Author</label>
-                        <input type="text" name="book-author" id="book-author" placeholder="Enter Book Author" required>
-
-                        <label for="book-pages">Number of Pages</label>
-                        <input type="number" name="book-pages" id="book-pages" placeholder="Enter Number of Pages" required>
-
-                        <div class="upload-image">
-                            <div class="drag-box">
-                                <span>Drag and Drop Image here!</span>
-                                <input type="file" id="upload-file" style="display: none;">
-                                <strong>OR</strong>
-                                <button id="upload-button">
-                                    <label for="upload-file">Upload Image</label>
-                                </button>
+                            <div class="upload-image">
+                                <div class="drag-box">
+                                    <span>Drag and Drop Image here!</span>
+                                    <input type="file" id="upload-file" style="display: none;">
+                                    <strong>OR</strong>
+                                    <button id="upload-button">
+                                        <label for="upload-file">Upload Image</label>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="read">
-                            <label class="switch">
-                                <input id="read-check" type="checkbox">
-                                <span class="slider"></span>
-                                <span id="read-text">I already read this book!</span>
-                            </label>
-                        </div>
-                        <div class="validation"></div>
-                        <button id="confirm-book">Confirm book</button>
-                    </form>
-                </dialog>
+                            <div class="read">
+                                <label class="switch">
+                                    <input id="read-check" type="checkbox">
+                                    <span class="slider"></span>
+                                    <span id="read-text">I already read this book!</span>
+                                </label>
+                            </div>
+                            <div class="validation"></div>
+                            <button id="confirm-book">Confirm book</button>
+                        </form>
+                    </dialog>
+                </div>    
             </div>
         
             <div class="review-section">

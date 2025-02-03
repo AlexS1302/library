@@ -54,7 +54,7 @@ header {
     border: none;
     margin-left: 2em;
     padding: 0px 0px 0px 40px;
-    background-image: url(icons/search.svg);
+    background-image: url('icons/search.svg');
     background-position: 10px;
     background-repeat: no-repeat;
     box-shadow: 0px 2px 4px 0px var(--powder-blue);
@@ -164,31 +164,31 @@ ul {
 }
 
 #my-library::before {
-    content: url(icons/my-library.svg);
+    content: url('icons/my-library.svg');
 }
 
 #new-releases::before {
-    content: url(icons/new-releases.svg);
+    content: url('icons/new-releases.svg');
 }
 
 #download::before {
-    content: url(icons/download.svg);
+    content: url('icons/download.svg');
 }
 
 #favorites::before {
-    content: url(icons/favorites.svg);
+    content: url('icons/favorites.svg');
 }
 
 #settings::before {
-    content: url(icons/settings.svg);
+    content: url('icons/settings.svg');
 }
 
 #support::before {
-    content: url(icons/support.svg);
+    content: url('icons/support.svg');
 }
 
 #logout::before {
-    content: url(icons/logout.svg);
+    content: url('icons/logout.svg');
 }
 
 
@@ -216,13 +216,13 @@ ul {
 
 .discover-poetry {
     grid-column: 1 / 2;
-    background-image: var(--linear-black), url(photos/the-sun-and-her-flowers.jpg);
+    background-image: var(--linear-black), url('photos/the-sun-and-her-flowers.jpg');
     margin: 30px 10px 30px 35px;
 }
 
 .discover-tragedy {
     grid-column: 2 / 3;
-    background-image: var(--linear-black), url(photos/the-great-gatsby.jpg);
+    background-image: var(--linear-black), url('photos/the-great-gatsby.jpg');
     margin: 30px 35px 30px 10px;
 }
 
@@ -244,12 +244,12 @@ ul {
 }
 
 .discover-poetry::before {
-    content: url(icons/keyboard_arrow_left.svg);
+    content: url('icons/keyboard_arrow_left.svg');
     left: 5px;
 }
 
 .discover-tragedy::after {
-    content: url(icons/keyboard_arrow_right.svg);
+    content: url('icons/keyboard_arrow_right.svg');
     right: 5px;
 }
 
@@ -322,11 +322,11 @@ ul {
 }
 
 .star {
-    background-image: url(icons/star.svg);
+    background-image: url('icons/star.svg');
 }
 
 .half-star {
-    background-image: url(icons/star-half.svg);
+    background-image: url('icons/star-half.svg');
 }
 
 
