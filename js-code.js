@@ -81,21 +81,17 @@ function displayBooks(books) {
 
         if (book.read === true) {
             readButton.innerHTML = `Done`;
-            readButton.style.backgroundColor = "#10e2c4";
         } else {
             readButton.textContent = "Mark as Read";
-            readButton.classList.add("read-gradient")
         }
 
         readButton.addEventListener("click", () => {
             if (readButton.textContent === "Mark as Read") {
                 book.read = true;
                 readButton.innerHTML = `Done`;
-                readButton.style.backgroundColor = "#10e2c4";
             } else {
                 book.read = false;
-                readButton.textContent = "Mark as read";
-                readButton.classList.add("read-gradient")
+                readButton.textContent = "Mark as Read";
             }
         });
 
