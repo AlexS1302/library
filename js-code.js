@@ -114,4 +114,20 @@ function displayBooks(books) {
     });
 }
 
+// Modal
+
+const addBookButton = document.querySelector("#add-book-btn");
+const closeButton = document.querySelector(".close");
+const modal = document.querySelector(".modal");
+
+addBookButton.addEventListener("click", () => {
+    modal.showModal();
+});
+
+closeButton.addEventListener("click", () => {
+    modal.close();
+})
+
+
+
 displayBooks(myLibrary);

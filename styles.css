@@ -53,7 +53,7 @@ header {
     border-radius: 10px;
     border: none;
     margin-left: 2em;
-    padding: 0px 0px 0px 40px;
+    padding-left: 40px;
     background-image: url('icons/search.svg');
     background-position: 10px;
     background-repeat: no-repeat;
@@ -130,7 +130,10 @@ ul {
 .discover-btn:hover, 
 #add-book-btn:hover, 
 .read-button:hover, 
-.delete:hover {
+.delete:hover,
+#confirm-book:hover,
+#upload-button:hover,
+.close:hover {
     transform: scale(1.05);
 }
 
@@ -276,7 +279,9 @@ ul {
 
 .discover-btn, 
 #add-book-btn, 
-.read-button {
+.read-button,
+#confirm-book,
+#upload-button {
     border-radius: 10px;
     border: none;
     padding: 10px 15px;
@@ -422,4 +427,75 @@ ul {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+
+/* modal */
+
+.close {
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.modal {
+    background-color: #f1fbfb;
+    border: none;
+    border-radius: 10px;
+}
+
+.modal-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.modal-top h3 {
+    margin: auto;
+}
+
+.book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 30px 15px 30px;
+}
+
+.book-form label {
+    margin-top: 20px;
+}
+
+.line {
+    padding: 5px;
+}
+
+#modal-book-title,
+#modal-book-author,
+#modal-book-pages {
+    padding-left: 20px;
+    border-color: var(--powder-blue);
+    border-style: solid;
+    outline: none;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.upload-image {
+    width: 450px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px dashed grey;
+}
+
+.drag-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.validation {
+    display: none;
 }
