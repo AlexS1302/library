@@ -80,18 +80,18 @@ function displayBooks(books) {
         readButton.classList.add("read-button");
 
         if (book.read === true) {
-            readButton.innerHTML = `Done`;
+            readButton.innerHTML = `<img src="./icons/book-finished.svg" alt="Book Finished Icon">Finished`;
         } else {
-            readButton.textContent = "Mark as Read";
+            readButton.innerHTML = `<img src="./icons/book-in-progress.svg" alt="Book in Progress Icon">Mark as Read`;
         }
 
         readButton.addEventListener("click", () => {
             if (readButton.textContent === "Mark as Read") {
                 book.read = true;
-                readButton.innerHTML = `Done`;
+                readButton.innerHTML = `<img src="./icons/book-finished.svg" alt="Book Finished Icon">Finished`;
             } else {
                 book.read = false;
-                readButton.textContent = "Mark as Read";
+                readButton.innerHTML = `<img src="./icons/book-in-progress.svg" alt="Book in Progress Icon">Mark as Read`;
             }
         });
 
