@@ -114,7 +114,7 @@ function displayBooks(books) {
     });
 }
 
-// Modal
+// Modal creation
 
 const addBookButton = document.querySelector("#add-book-btn");
 const closeButton = document.querySelector(".close");
@@ -128,23 +128,43 @@ closeButton.addEventListener("click", () => {
     modal.close();
 })
 
+// Enable users to upload and attach images to their books
 
+const dragAndDropArea = document.querySelector("#upload-file");
+const uploadImage = document.querySelector(".upload-image");
+const dragBox = document.querySelector(".drag-box");
+const imagePreview = document.querySelector("#image-preview");
 
-function addImageModal() {
-    let file = dragAndDropArea.files[0];
+function addImageModal(file) {
     let bookImage = URL.createObjectURL(file);
-    const dragAndDropArea = document.querySelector("#upload-file");
-    const uploadImage = document.querySelector(".upload-image");
-    const dragBox = document.querySelector(".drag-box");
-    const imagePreview = document.querySelector("#image-preview");
-    
-    //uploadImage.style.display = "none";
     dragBox.style.display = "none";
     imagePreview.style.display = "block";
     imagePreview.src = bookImage;
     uploadImage.appendChild(imagePreview);
+}
 
+function handleFileSelect(event) {
+    let file = event.target.files[0];
+    if (file) {
+        addImageModal(file);
+    }
+}
+
+function dragImageModal(event) {
+    event.preventDefault();
+    dragBox.classList.add("dragging-image");
+}
+
+function dropImageModal(event) {
+    event.preventDefault();
+    dragBox.classList.remove("dragging-image");
+    const files = event.dataTransfer.files;
+    if (files.length > 0) {
+        addImageModal(files[0]);
+    }
 }
 
 displayBooks(myLibrary);
-dragAndDropArea.addEventListener("change", addImageModal);
+dragAndDropArea.addEventListener("change", handleFileSelect);
+dragBox.addEventListener("dragover", dragImageModal);
+dragBox.addEventListener("drop", dropImageModal);
