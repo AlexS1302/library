@@ -211,7 +211,7 @@ ul {
 .book-section {
     grid-column: 1 / 2;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 540px 1fr;
 }
 
 .discover {

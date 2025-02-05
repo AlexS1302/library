@@ -79,7 +79,7 @@ function displayBooks(books) {
         const readButton = document.createElement("button");
         readButton.classList.add("read-button");
 
-        if (book.read === true) {
+        if (book.isRead === true) {
             readButton.innerHTML = `<img src="./icons/book-finished.svg" alt="Book Finished Icon">Finished`;
         } else {
             readButton.innerHTML = `<img src="./icons/book-in-progress.svg" alt="Book in Progress Icon">Mark as Read`;
@@ -87,10 +87,10 @@ function displayBooks(books) {
 
         readButton.addEventListener("click", () => {
             if (readButton.textContent === "Mark as Read") {
-                book.read = true;
+                book.isRead = true;
                 readButton.innerHTML = `<img src="./icons/book-finished.svg" alt="Book Finished Icon">Finished`;
             } else {
-                book.read = false;
+                book.isRead = false;
                 readButton.innerHTML = `<img src="./icons/book-in-progress.svg" alt="Book in Progress Icon">Mark as Read`;
             }
         });
@@ -134,9 +134,11 @@ const dragAndDropArea = document.querySelector("#upload-file");
 const uploadImage = document.querySelector(".upload-image");
 const dragBox = document.querySelector(".drag-box");
 const imagePreview = document.querySelector("#image-preview");
+const uploadImageButton = document.querySelector("#upload-button");
+let bookImage = null;
 
 function addImageModal(file) {
-    let bookImage = URL.createObjectURL(file);
+    bookImage = URL.createObjectURL(file);
     dragBox.style.display = "none";
     imagePreview.style.display = "block";
     imagePreview.src = bookImage;
@@ -164,6 +166,11 @@ function dropImageModal(event) {
     }
 }
 
+uploadImageButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    dragAndDropArea.click();
+});
+
 function validateForm() {
     let bookTitle = document.querySelector("#modal-book-title");
     let bookAuthor = document.querySelector("#modal-book-author");
@@ -179,6 +186,46 @@ function validateForm() {
         return true;
     }
 }
+
+
+// Confirm added books
+
+const confirmButton = document.querySelector("#confirm-book");
+const bookForm = document.querySelector(".book-form");
+const validationMessage = document.querySelector(".validation");
+
+confirmButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    if (validateForm()) {
+        let bookTitle = document.querySelector("#modal-book-title").value;
+        let bookAuthor = document.querySelector("#modal-book-author").value;
+        let bookNumberOfPages = document.querySelector("#modal-book-pages").value;
+
+        const read = document.querySelector("#read-check");
+        let isRead = read.checked;
+
+        if (!bookImage) {
+            bookImage = "./photos/placeholder-book-image.jpg";
+        }
+
+        addBookToLibrary(bookTitle, bookAuthor, bookNumberOfPages, isRead, bookImage);
+
+        // Refresh book display
+        document.querySelectorAll(".book").forEach((e) => e.remove());
+        displayBooks(myLibrary);
+
+        // Reset form and UI
+        bookForm.reset();
+        bookImage = null;
+        validationMessage.textContent = "";
+        dragBox.style.display = "flex";
+        imagePreview.style.display = "none";
+
+        modal.close();
+    } else {
+        validationMessage.textContent = "Please fill in the book title, author and number of pages fields!";
+    }
+});
 
 
 displayBooks(myLibrary);
