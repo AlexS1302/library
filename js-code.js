@@ -130,4 +130,21 @@ closeButton.addEventListener("click", () => {
 
 
 
+function addImageModal() {
+    let file = dragAndDropArea.files[0];
+    let bookImage = URL.createObjectURL(file);
+    const dragAndDropArea = document.querySelector("#upload-file");
+    const uploadImage = document.querySelector(".upload-image");
+    const dragBox = document.querySelector(".drag-box");
+    const imagePreview = document.querySelector("#image-preview");
+    
+    //uploadImage.style.display = "none";
+    dragBox.style.display = "none";
+    imagePreview.style.display = "block";
+    imagePreview.src = bookImage;
+    uploadImage.appendChild(imagePreview);
+
+}
+
 displayBooks(myLibrary);
+dragAndDropArea.addEventListener("change", addImageModal);

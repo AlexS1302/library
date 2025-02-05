@@ -432,11 +432,6 @@ ul {
 
 /* modal */
 
-.close {
-    cursor: pointer;
-    transition-duration: 0.4s;
-}
-
 .modal {
     background-color: #f1fbfb;
     border: none;
@@ -454,19 +449,21 @@ ul {
     margin: auto;
 }
 
+.close {
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.line {
+    padding: 5px;
+}
+
 .book-form {
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 10px 30px 15px 30px;
 }
-
-
-.line {
-    padding: 5px;
-}
-
-
 
 #modal-book-title,
 #modal-book-author,
@@ -497,3 +494,13 @@ ul {
     gap: 15px;
 }
 
+#upload-button label {
+    cursor: pointer;
+}
+
+#image-preview {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    padding: 10px;
+}
