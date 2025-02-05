@@ -164,7 +164,26 @@ function dropImageModal(event) {
     }
 }
 
+function validateForm() {
+    let bookTitle = document.querySelector("#modal-book-title");
+    let bookAuthor = document.querySelector("#modal-book-author");
+    let bookNumberOfPages = document.querySelector("#modal-book-pages");
+
+    if (
+        bookTitle.value === "" ||
+        bookAuthor.value === "" ||
+        bookNumberOfPages.value === ""
+    ) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
 displayBooks(myLibrary);
 dragAndDropArea.addEventListener("change", handleFileSelect);
 dragBox.addEventListener("dragover", dragImageModal);
 dragBox.addEventListener("drop", dropImageModal);
+
+

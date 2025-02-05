@@ -494,6 +494,10 @@ ul {
     gap: 15px;
 }
 
+.drag-box span {
+    font-weight: 500;
+}
+
 #upload-button label {
     cursor: pointer;
 }
