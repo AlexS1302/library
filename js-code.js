@@ -114,19 +114,36 @@ function displayBooks(books) {
     });
 }
 
-// Modal creation
+// Add button modal creation
 
 const addBookButton = document.querySelector("#add-book-btn");
-const closeButton = document.querySelector(".close");
-const modal = document.querySelector(".modal");
+const closeBookButton = document.querySelector("#close-book-modal");
+const bookModal = document.querySelector("#book-modal");
 
 addBookButton.addEventListener("click", () => {
-    modal.showModal();
+    bookModal.showModal();
 });
 
-closeButton.addEventListener("click", () => {
-    modal.close();
-})
+closeBookButton.addEventListener("click", () => {
+    bookModal.close();
+});
+
+// Picture credits modal creation
+
+const pictureCreditsHeading = document.querySelector("#credits-heading");
+const closeCreditsButton = document.querySelector("#close-credits-modal");
+const creditsModal = document.querySelector("#credits-modal");
+
+pictureCreditsHeading.addEventListener("click", () => {
+    creditsModal.showModal();
+});
+
+closeCreditsButton.addEventListener("click", () => {
+    creditsModal.close();
+});
+
+
+
 
 // Enable users to upload and attach images to their books
 
@@ -221,7 +238,7 @@ confirmButton.addEventListener("click", function (event) {
         dragBox.style.display = "flex";
         imagePreview.style.display = "none";
 
-        modal.close();
+        bookModal.close();
     } else {
         validationMessage.textContent = "Please fill in the book title, author and number of pages fields!";
     }

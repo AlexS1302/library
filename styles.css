@@ -134,7 +134,9 @@ ul {
 .delete:hover,
 #confirm-book:hover,
 #upload-button:hover,
-.close:hover {
+#close-book-modal:hover,
+#close-credits-modal:hover,
+#credits-heading:hover {
     transform: scale(1.05);
 }
 
@@ -197,6 +199,24 @@ ul {
 
 #logout::before {
     content: url('icons/logout.svg');
+}
+
+/* picture credits */
+
+#credits-heading {
+    color: var(--white);
+    margin-top: auto;
+    font-size: 1.2em;
+    text-decoration: overline;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Add text shadow */
+}
+
+
+#close-book-modal,
+#close-credits-modal,
+#credits-heading {
+    cursor: pointer;
+    transition-duration: 0.4s;
 }
 
 
@@ -360,7 +380,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 15px 0;
+    padding: 0 15px;
     margin: 0 10px;
 }
 
@@ -374,7 +394,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 20px;
-    padding: 15px;
+    padding: 0 15px 15px;
 }
 
 .book {
@@ -438,9 +458,9 @@ ul {
 }
 
 
-/* modal */
+/* add book modal */
 
-.modal {
+#book-modal {
     background-color: #f1fbfb;
     border: none;
     border-radius: 10px;
@@ -459,11 +479,6 @@ ul {
     font-family: 'Jua', serif;
     font-size: 1.5em;
     font-weight: 500;
-}
-
-.close {
-    cursor: pointer;
-    transition-duration: 0.4s;
 }
 
 .line {

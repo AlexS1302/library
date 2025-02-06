@@ -39,6 +39,16 @@
                 <li id="support" class="menu-item"><a href="#">Support</a></li>
                 <li id="logout" class="menu-item"><a href="#">Log out</a></li>
             </ul>
+            <p id="credits-heading">Picture Credits</p>
+            <dialog id="credits-modal">
+                <div class="modal-top">
+                    <h3>Picture Credits Information</h3>
+                    <img id="close-credits-modal" src="icons/close.svg" alt="Close icon">
+                </div>
+                <div class="line">
+                    <hr>
+                </div>
+            </dialog>
         </div>
 
         <div class="main">
@@ -69,11 +79,11 @@
                     
                     <div class="books"></div>
                     
-                    <dialog class="modal">
+                    <dialog id="book-modal">
                         <div class="modal-container">
                         <div class="modal-top">
                             <h3>Add a New Book!</h3>
-                            <img class="close" src="icons/close.svg" alt="Close icon">
+                            <img id="close-book-modal" src="icons/close.svg" alt="Close icon">
                         </div>
                         <div class="line">
                             <hr>
