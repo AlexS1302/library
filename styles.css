@@ -101,6 +101,7 @@ header {
 }
 
 #logo {
+    font-family: 'Jua', serif;
     padding: 1em;
     font-size: 2.5em;
     font-weight: 600;
@@ -315,6 +316,11 @@ ul {
     margin-top: 0;
 }
 
+.review-section h2 {
+    font-family: 'Jua', serif;
+    font-weight: 500;
+}
+
 .review-section p {
     padding: 15px 20px;
     margin: 10px 10px;
@@ -355,11 +361,13 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding: 15px 15px 0;
-    margin: 0 5px;
+    margin: 0 10px;
 }
 
 .library-top h3 {
+    font-family: 'Jua', serif;
     font-size: 1.5em;
+    font-weight: 500;
 }
 
 .books {
@@ -443,10 +451,14 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+    
 }
 
 .modal-top h3 {
     margin: auto;
+    font-family: 'Jua', serif;
+    font-size: 1.5em;
+    font-weight: 500;
 }
 
 .close {
