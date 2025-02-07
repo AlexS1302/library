@@ -529,6 +529,7 @@ ul {
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    transition: transform 0.4s ease;
 }
 
 .drag-box span {
@@ -549,4 +550,8 @@ ul {
 .dragging-image {
     transform: scale(1.05);
     transition-duration: 0.4s;
+}
+
+#confirm-book {
+    margin: 0px -5px;
 }

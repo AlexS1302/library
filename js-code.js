@@ -183,6 +183,11 @@ function dropImageModal(event) {
     }
 }
 
+function leaveDragArea(event) {
+    dragBox.classList.remove("dragging-image");
+}
+
+
 uploadImageButton.addEventListener("click", function(event) {
     event.preventDefault();
     dragAndDropArea.click();
@@ -250,5 +255,6 @@ displayBooks(myLibrary);
 dragAndDropArea.addEventListener("change", handleFileSelect);
 dragBox.addEventListener("dragover", dragImageModal);
 dragBox.addEventListener("drop", dropImageModal);
+dragBox.addEventListener("dragleave", leaveDragArea);
 
 
