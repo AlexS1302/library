@@ -232,9 +232,11 @@ ul {
 }
 
 .credits-list a,
-.credits-list a:visited {
+.credits-list a:visited
+.credits-list a:focus {
     color: #2596be;
     text-decoration: underline;
+    outline: none;
 }
 
 /* main */
