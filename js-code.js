@@ -241,6 +241,7 @@ confirmButton.addEventListener("click", function (event) {
         bookModal.close();
     } else {
         validationMessage.textContent = "Please fill in the book title, author and number of pages fields!";
+        validationMessage.style.color = "red";
     }
 });
 

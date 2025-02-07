@@ -460,7 +460,7 @@ ul {
 
 /* add book modal */
 
-#book-modal {
+#book-modal, #credits-modal {
     background-color: #f1fbfb;
     border: none;
     border-radius: 10px;
