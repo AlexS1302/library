@@ -1,7 +1,9 @@
 
-const myLibrary = [];
+let myLibrary = [];
 
 // Book constructor
+
+let bookId = 0;
 
 function Book(title, author, pages, isRead, image) {
     this.title = title;
@@ -9,6 +11,7 @@ function Book(title, author, pages, isRead, image) {
     this.pages = pages;
     this.isRead = isRead;
     this.image = image;
+    this.id = bookId++;
 }
 
 function addBookToLibrary(title, author, pages, isRead, image) {
@@ -46,11 +49,14 @@ addBookToLibrary(
 // Displaying the books on the page
 
 function displayBooks(books) {
+    const bookList = document.querySelector(".books");
+    bookList.innerHTML = "";
+    
     books.forEach((book) => {
-        const bookList = document.querySelector(".books");
 
         const bookElement = document.createElement("div");
         bookElement.classList.add("book");
+        bookElement.setAttribute("data-id", book.id);
 
         const bookImage = document.createElement("div");
         bookImage.classList.add("book-image");
@@ -103,7 +109,9 @@ function displayBooks(books) {
         deleteButton.alt = "Delete book button";
 
         deleteButton.addEventListener("click", () => {
-            deleteButton.closest(".book").remove();
+            const bookId = parseInt(deleteButton.closest(".book").getAttribute("data-id"));
+            myLibrary = myLibrary.filter((book) => book.id !== bookId);
+            displayBooks(myLibrary)
         });
 
         bookButtons.appendChild(deleteButton);
@@ -233,7 +241,6 @@ confirmButton.addEventListener("click", function (event) {
         addBookToLibrary(bookTitle, bookAuthor, bookNumberOfPages, isRead, bookImage);
 
         // Refresh book display
-        document.querySelectorAll(".book").forEach((e) => e.remove());
         displayBooks(myLibrary);
 
         // Reset form and UI
