@@ -34,4 +34,4 @@ Users are also able to delete any placeholder books or any book they have added.
 You can view this project [here](https://alexs1302.github.io/library/)!
 
 ## Credits
-This Project was created as part of The Odin Project's curriculum, a free online resource for learning web development.
+This project was created as part of The Odin Project's curriculum, a free online resource for learning web development.
